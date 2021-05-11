@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TheBudget</string>
+    <string name="action_delete_all">Delete All</string>
+    <string name="SHARED_PREF_NAME">com.zappycode.budget.sharedprefs"</string>
+    <string name="BUDGET_STRINGS">budgetstrings</string>
+    <string name="BUDGETPRICE_STRINGS">budgetpricestrings</string>
+    <string name="EXTRA_FOR_BUDGET">budget</string>
+    <string name="EXTRA_FOR_BUDGETPRICE">budgetprice</string>
+
+</resources>

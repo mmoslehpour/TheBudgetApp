@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateBudgetActivity">
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Note"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/foodCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="food"
+        android:textColorHighlight="#2196F3"
+        android:textColorLink="#2196F3"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/titleEditText"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+
+    <CheckBox
+        android:id="@+id/transportationCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="transportation"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/groceriesCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/groceriesCheckBox" />
+
+    <CheckBox
+        android:id="@+id/entertainmentCheckBox"
+        android:layout_width="235dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:text="entertainment"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/transportationCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/transportationCheckBox" />
+
+    <CheckBox
+        android:id="@+id/groceriesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="groceries"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/foodCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/foodCheckBox" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="92dp"
+        android:text="Save"
+        app:layout_constraintStart_toStartOf="@+id/entertainmentCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/entertainmentCheckBox" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="$0.00"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/titleEditText"
+        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
+</android.support.constraint.ConstraintLayout>
