@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var layoutManager : LinearLayoutManager
     lateinit var adapter : BudgetAdapter
-    lateinit var priceAdapter : BudgetPriceAdapter
+   // lateinit var priceAdapter : BudgetPriceAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar
-        actionBar!!.title = "THE BUDGET"
+        actionBar!!.title = "THE BUDGET APP"
 
         fab.setOnClickListener { view ->
             val intent = Intent(this,CreateBudgetActivity::class.java)
@@ -45,11 +45,12 @@ class MainActivity : AppCompatActivity() {
 
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        adapter = BudgetAdapter(budgets.toList())
-        priceAdapter = BudgetPriceAdapter(budgetprice.toList())
+        //priceView.layoutManager = layoutManager
+        adapter = BudgetAdapter(budgets.toList(),budgetprice.toList())
+     //   adapter = BudgetAdapter(budgetprice.toList())
 
         recyclerView.adapter = adapter
-        recyclerView.adapter = priceAdapter
+       // priceView.adapter = adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.budget_row.view.*
 
-class BudgetAdapter(val budgets: List<String>) : RecyclerView.Adapter<BudgetAdapter.BudgetHolder>() {
+class BudgetAdapter(val budgets: List<String>,val budgetprice: List<String>) : RecyclerView.Adapter<BudgetAdapter.BudgetHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): BudgetHolder {
         return BudgetHolder(LayoutInflater.from(p0.context).inflate(R.layout.budget_row, p0, false))
     }
@@ -20,10 +20,10 @@ class BudgetAdapter(val budgets: List<String>) : RecyclerView.Adapter<BudgetAdap
 
     override fun onBindViewHolder(p0: BudgetHolder, p1: Int) {
         val title = budgets[p1]
-        //val price = budgetsPrice[p1]
+      //  val price = budgetprice[p1]
         p0.run {
             bindBudget(title)
-           // bindBudget(price)
+            //bindBudget(price)
         }
     }
 
@@ -31,7 +31,7 @@ class BudgetAdapter(val budgets: List<String>) : RecyclerView.Adapter<BudgetAdap
 
         var view : View = v
         var title : String = ""
-     //   var price : Double = 0.0
+        var price : String = ""
 
         init {
             v.setOnClickListener(this)
@@ -39,21 +39,22 @@ class BudgetAdapter(val budgets: List<String>) : RecyclerView.Adapter<BudgetAdap
 
         fun bindBudget(title:String) {
             this.title = title
-           // this.price = price
+            this.price = price
             view.textView.text = title
-           // view.priceView.text= price.toString()
+            view.priceView.text= price
         }
 
         override fun onClick(v: View?) {
             val intent = Intent(view.context, CompleteBudgetActivity::class.java)
             intent.putExtra("title", title)
-           // intent.putExtra("price",price)
+            intent.putExtra("price",price)
             startActivity(view.context,intent, null)
         }
 
     }
 }
 
+/*
 class BudgetPriceAdapter(val budgetprice: List<String>) : RecyclerView.Adapter<BudgetPriceAdapter.BudgetPriceHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): BudgetPriceHolder {
         return BudgetPriceHolder(LayoutInflater.from(p0.context).inflate(R.layout.budget_row, p0, false))
@@ -72,29 +73,30 @@ class BudgetPriceAdapter(val budgetprice: List<String>) : RecyclerView.Adapter<B
         }
     }
 
-    class BudgetPriceHolder(v:View) : RecyclerView.ViewHolder(v), View.OnClickListener  {
+    class BudgetPriceHolder(v2:View) : RecyclerView.ViewHolder(v2), View.OnClickListener  {
 
-        var view : View = v
+        var view2 : View = v2
      //   var title : String = ""
         var price : String = ""
 
         init {
-            v.setOnClickListener(this)
+            v2.setOnClickListener(this)
         }
 
         fun bindBudgetPrice(price: String) {
            // this.title = title
             this.price = price
            // view.textView.text = title
-            view.priceView.text= price
+            view2.priceView.text= price
         }
 
         override fun onClick(v: View?) {
-            val intent = Intent(view.context, CompleteBudgetActivity::class.java)
+            val intent = Intent(view2.context, CompleteBudgetActivity::class.java)
        //     intent.putExtra("title", title)
             intent.putExtra("price",price)
-            startActivity(view.context,intent, null)
+            startActivity(view2.context,intent, null)
         }
 
     }
 }
+*/
